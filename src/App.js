@@ -40,7 +40,10 @@ class App extends Component {
     ]
     return (
       <div className="App">
-        <input className="result" type="text" value={this.state}/>
+        <input className="result" type="text" value={this.state.current}/>
+        {buttons.map((btn,i)=> {
+          return <Button symbol={btn.symbol} cols={btn.cols} action={(symbol)=> btn.action}/>
+        })}
       </div>
     )
   }
